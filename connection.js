@@ -10,4 +10,4 @@ connection.connect((err) => {
     console.log('connected');
 });
 
-module.exports = connection
+module.exports = connection;

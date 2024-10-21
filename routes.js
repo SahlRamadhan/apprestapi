@@ -3,5 +3,5 @@
 module.exports = function (app) {
     var json = require('./controller');
 
-    app.get('/json', json.index);
+   app.route('/').get(json.index);
 }
