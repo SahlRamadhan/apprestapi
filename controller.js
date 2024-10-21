@@ -31,3 +31,18 @@ exports.tampildataID = function (req, res) {
         }
     })
 }
+
+
+exports.tambahdata = function (req, res) {
+    let nama = req.body.nama_mhs
+    let nim = req.body.nim_mhs
+    let jurusan = req.body.jurusan_mhs
+    connection.query('INSERT INTO mahasiswa (nama_mhs, nim_mhs, jurusan_mhs) VALUES (?, ?, ?)', [nama, nim, jurusan], function (error, rows, fields) {
+        if (error) {
+            console.log(error)
+             res.status(500).json({ message: 'Database error', error: error });
+        } else {
+            response.ok("Berhasil Menabahkan Data", res)
+        }
+    })
+}
