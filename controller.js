@@ -9,6 +9,8 @@ exports.index = function (req, res) {
     response.ok("Testing", res)
 }
 
+
+// TAMPIL DATA
 exports.tampildata = function (req, res) {
     connection.query('SELECT * FROM mahasiswa', function (error, rows, fields) {
         if (error) {
@@ -20,6 +22,7 @@ exports.tampildata = function (req, res) {
 }
 
 
+// TAMPIL DATA BERDASARKAN ID
 exports.tampildataID = function (req, res) {
     let id = req.params.id
     connection.query('SELECT * FROM mahasiswa WHERE id = ?', [id], function (error, rows, fields) {
@@ -33,6 +36,7 @@ exports.tampildataID = function (req, res) {
 }
 
 
+// TAMBAH DATA
 exports.tambahdata = function (req, res) {
     let nama = req.body.nama_mhs
     let nim = req.body.nim_mhs
@@ -47,9 +51,10 @@ exports.tambahdata = function (req, res) {
     })
 }
 
+// UPDATE DATA
 exports.updatedata = function (req, res) {
     // Mengambil data dari body permintaan
-    let id = req.params.id; // ID mahasiswa yang akan diperbarui
+    let id = req.params.id;
     let nama = req.body.nama_mhs;
     let nim = req.body.nim_mhs;
     let jurusan = req.body.jurusan_mhs;
@@ -75,6 +80,7 @@ exports.updatedata = function (req, res) {
 };
 
 
+// DELETE DATA
 exports.deletedata = function (req, res) {
     let id = req.params.id; // Mengambil ID mahasiswa dari parameter URL
 
