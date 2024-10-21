@@ -73,3 +73,23 @@ exports.updatedata = function (req, res) {
         }
     );
 };
+
+
+exports.deletedata = function (req, res) {
+    let id = req.params.id; // Mengambil ID mahasiswa dari parameter URL
+
+    // Query untuk menghapus data mahasiswa berdasarkan ID
+    connection.query('DELETE FROM mahasiswa WHERE id = ?', [id], function (error, rows, fields) {
+        if (error) {
+            console.log(error);
+            res.status(500).json({ message: 'Database error', error: error });
+        } else {
+            // Mengecek apakah ada baris yang dihapus
+            if (rows.affectedRows > 0) {
+                response.ok("Berhasil Menghapus Data", res);
+            } else {
+                res.status(404).json({ message: 'Data tidak ditemukan' });
+            }
+        }
+    });
+};

@@ -12,4 +12,6 @@ module.exports = function (app) {
     app.route('/mahasiswa/tambah').post(json.tambahdata);
 
     app.route('/mahasiswa/update/:id').put(json.updatedata);
+
+    app.route('/mahasiswa/delete/:id').delete(json.deletedata);
 }
