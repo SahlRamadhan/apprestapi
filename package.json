@@ -1,0 +1,23 @@
+{
+  "name": "apprestapi",
+  "version": "1.0.0",
+  "description": "latihan rest api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SahlRamadhan/apprestapi.git"
+  },
+  "keywords": [
+    "rest",
+    "api"
+  ],
+  "author": "ramadhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SahlRamadhan/apprestapi/issues"
+  },
+  "homepage": "https://github.com/SahlRamadhan/apprestapi#readme"
+}
